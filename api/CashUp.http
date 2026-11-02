@@ -1,0 +1,40 @@
+@baseUrl = http://localhost:5091
+
+### Reset the supplied fixture
+POST {{baseUrl}}/demo/reset
+
+### Read the drawer and current closeout
+GET {{baseUrl}}/api/closeout
+
+### Save an unfinished discrepant draft
+PUT {{baseUrl}}/api/closeout/draft
+Content-Type: application/json
+
+{
+  "countedCashMinor": 17300,
+  "explanation": ""
+}
+
+### This returns a validation problem
+POST {{baseUrl}}/api/closeout/finalize
+
+### Revise the explanation
+PUT {{baseUrl}}/api/closeout/draft
+Content-Type: application/json
+
+{
+  "countedCashMinor": 17300,
+  "explanation": "Recounted; drawer is still short."
+}
+
+### Finalize
+POST {{baseUrl}}/api/closeout/finalize
+
+### Simulate a slow request and a single failure before mutation
+PUT {{baseUrl}}/demo/behavior
+Content-Type: application/json
+
+{
+  "delayMilliseconds": 1000,
+  "failNextMutation": true
+}

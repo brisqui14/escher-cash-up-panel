@@ -1,0 +1,25 @@
+{
+  "drawerId": "counter-01",
+  "currency": "EUR",
+  "openingCashMinor": 10000,
+  "transactions": [
+    {
+      "id": "sale-001",
+      "kind": "sale",
+      "amountMinor": 5500,
+      "description": "Cash sale"
+    },
+    {
+      "id": "sale-002",
+      "kind": "sale",
+      "amountMinor": 2750,
+      "description": "Cash sale"
+    },
+    {
+      "id": "refund-001",
+      "kind": "refund",
+      "amountMinor": 750,
+      "description": "Cash refund"
+    }
+  ]
+}
