@@ -1,0 +1,302 @@
+.cash-up-panel h2 {
+  margin-top: 0;
+}
+
+.cash-up-panel h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.cash-up-hint {
+  color: #455969;
+  font-size: 0.9rem;
+  margin: 0.15rem 0 0.35rem;
+}
+
+/* Kept in the page when empty, not display: none, so screen readers announce updates. */
+.cash-up-status:empty {
+  margin: 0;
+}
+
+.cash-up-failure {
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #b3261e;
+  background: #fdf0ef;
+}
+
+.cash-up-failure p {
+  margin: 0 0 0.5rem;
+}
+
+.cash-up-failure p:last-child {
+  margin-bottom: 0;
+}
+
+.cash-up-activity table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cash-up-activity caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+.cash-up-activity th,
+.cash-up-activity td {
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid #dde4e9;
+  font-weight: normal;
+}
+
+.cash-up-activity thead th,
+.cash-up-activity tfoot th,
+.cash-up-activity tfoot td {
+  font-weight: 600;
+}
+
+.cash-up-activity .cash-up-amount {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cash-up-count {
+  margin-top: 1.5rem;
+}
+
+/* The count and variance continue the activity table's rows: label on the left, amount on the
+   right, so counted cash lines up under expected cash. */
+.cash-up-ledger-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid #dde4e9;
+}
+
+.cash-up-ledger-row label,
+.cash-up-ledger-row dt {
+  font-weight: 600;
+}
+
+.cash-up-ledger-value {
+  margin: 0 0 0 auto;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+dd.cash-up-ledger-value {
+  font-weight: 600;
+}
+
+/* An empty value: lighter than the bold amounts, but still dark enough to pass contrast. */
+.cash-up-no-value {
+  color: #455969;
+  font-weight: normal;
+}
+
+/* Read by screen readers, invisible on screen. */
+.cash-up-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The finished record: a centered column, like a receipt. */
+.cash-up-finalized {
+  max-width: 28rem;
+  margin: 1.5rem auto 0;
+}
+
+.cash-up-finalized h3 {
+  text-align: center;
+}
+
+.cash-up-finalized dl {
+  margin: 0;
+}
+
+.cash-up-finalized-note {
+  padding: 0.5rem;
+  border-bottom: 1px solid #dde4e9;
+}
+
+.cash-up-finalized-note dt {
+  font-weight: 600;
+}
+
+.cash-up-finalized-note dd {
+  margin: 0.25rem 0 0;
+  white-space: pre-wrap;
+}
+
+.cash-up-variance-match {
+  color: #1b6b3a;
+}
+
+.cash-up-variance-shortage {
+  color: #b3261e;
+}
+
+.cash-up-variance-surplus {
+  color: #8a5300;
+}
+
+.cash-up-field {
+  margin: 1rem 0;
+}
+
+.cash-up-field label {
+  display: block;
+  font-weight: 600;
+}
+
+.cash-up-panel input,
+.cash-up-panel textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #7a8c99;
+  border-radius: 0.25rem;
+}
+
+/* The explanation box only grows taller, never wider, and never below its starting size:
+   three lines, plus its padding (0.45rem top and bottom) and border (1px top and bottom). */
+.cash-up-panel textarea {
+  resize: vertical;
+  min-height: calc(3lh + 0.9rem + 2px);
+}
+
+.cash-up-money-input {
+  position: relative;
+  width: 12rem;
+  max-width: 100%;
+  margin-left: auto;
+}
+
+.cash-up-currency {
+  position: absolute;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #455969;
+  pointer-events: none;
+}
+
+.cash-up-money-input input {
+  padding-left: 1.6rem;
+  text-align: right;
+}
+
+.cash-up-panel [aria-invalid="true"] {
+  border: 2px solid #b3261e;
+}
+
+/* A hint that has become the error: red and bold, with a "!" mark so it doesn't rely on color.
+   The mark is decoration only (the empty alt text after the slash hides it from screen readers). */
+.cash-up-hint-error {
+  color: #b3261e;
+  font-weight: 600;
+}
+
+.cash-up-hint-error::before {
+  content: "!" / "";
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 0.35em;
+  border-radius: 50%;
+  background: #b3261e;
+  color: white;
+  font-size: 0.85em;
+  line-height: 1.15em;
+  text-align: center;
+}
+
+.cash-up-field-error {
+  color: #b3261e;
+  font-weight: 600;
+  margin: 0.15rem 0 0.35rem;
+}
+
+.cash-up-ledger-value .cash-up-field-error {
+  max-width: 20rem;
+  margin-left: auto;
+}
+
+.cash-up-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Finalize and Confirm are the main actions, so they are filled in the host's own blue. */
+.cash-up-primary {
+  background: #185ab0;
+  border: 1px solid #185ab0;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+.cash-up-primary:hover:not([aria-disabled="true"]) {
+  background: #124a8f;
+  border-color: #124a8f;
+}
+
+.cash-up-panel button[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cash-up-confirm {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #185ab0;
+  background: #eef4fb;
+  text-align: right;
+}
+
+.cash-up-confirm p {
+  margin: 0;
+}
+
+.cash-up-confirm .cash-up-actions {
+  margin-top: 0.75rem;
+}
+
+.cash-up-transactions {
+  margin-top: 0.75rem;
+}
+
+.cash-up-transactions summary {
+  cursor: pointer;
+  padding: 0.35rem 0;
+}
+
+/* A long shift scrolls inside this box, and the column headings stay in view. */
+.cash-up-transactions-list {
+  max-height: 16rem;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  border: 1px solid #dde4e9;
+}
+
+.cash-up-transactions-list thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+}
