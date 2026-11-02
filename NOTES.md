@@ -111,7 +111,8 @@ idempotent. After a 400 or 409 the panel re-reads the server rather than trustin
 
 ## Time spent
 
-Approximately 3 hours on the core build, plus further time refining the UI and reviewing.
+Approximately 3 hours: 1 hour on the initial build, 1 hour on iteration and tests, and 1 hour
+on interview prep (a React refresher).
 
 ## Tools
 
